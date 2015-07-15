@@ -1,0 +1,13 @@
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
+target 'MSServerSentEvents_Example', :exclusive => true do
+  pod "MSServerSentEvents", :path => "../"
+end
+
+target 'MSServerSentEvents_Tests', :exclusive => true do
+  pod "MSServerSentEvents", :path => "../"
+
+  pod 'Specta'
+  pod 'Expecta'
+end
