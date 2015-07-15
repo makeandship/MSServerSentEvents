@@ -190,8 +190,6 @@ typedef void (^ServerSentEventBlock)(MSServerSentEvent *event);
         field = eventStreamLineString;
         value = @"";
     }
-//    DDLogVerbose(@"field:%@",field);
-//    DDLogVerbose(@"value:%@",value);
     if ( [field isEqualToString:@"event"] ) {
         self.eventNameBuffer = value;
     }
