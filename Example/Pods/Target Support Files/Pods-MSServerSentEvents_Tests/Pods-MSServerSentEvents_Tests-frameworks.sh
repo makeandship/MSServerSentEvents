@@ -49,12 +49,14 @@ code_sign() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Expecta.framework'
+  install_framework 'GCDWebServer.framework'
   install_framework 'MSServerSentEvents.framework'
   install_framework 'Specta.framework'
   install_framework 'libextobjc.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Expecta.framework'
+  install_framework 'GCDWebServer.framework'
   install_framework 'MSServerSentEvents.framework'
   install_framework 'Specta.framework'
   install_framework 'libextobjc.framework'

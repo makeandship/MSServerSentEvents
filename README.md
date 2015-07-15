@@ -5,11 +5,33 @@
 [![License](https://img.shields.io/cocoapods/l/MSServerSentEvents.svg?style=flat)](http://cocoapods.org/pods/MSServerSentEvents)
 [![Platform](https://img.shields.io/cocoapods/p/MSServerSentEvents.svg?style=flat)](http://cocoapods.org/pods/MSServerSentEvents)
 
+An Objective-C implementation of [Server-Sent Events](https://developer.mozilla.org/en-US/docs/Server-sent_events/Using_server-sent_events)
+
 ## Usage
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+Simply initialise an event source and then subscribe to receive events:
 
-## Requirements
+```objective-c
+NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:@"http://127.0.0.1:8888/"];
+
+MSServerSentEventsSource *serverSentEventsSource = [[MSServerSentEventsSource alloc] initWithRequest:request receive:^(MSServerSentEvent *event) {
+	NSLog(@"received:%@",event);
+}
+completion:^{
+	NSLog(@"closed");
+}
+failure:^(NSError *error) {
+	NSLog(@"error:%@",error);
+}];
+
+[serverSentEventsSource addListenerForEvent:@"open" usingBlock:^(MSServerSentEvent *event) {
+	NSLog(@"received open event");
+}];
+
+[serverSentEventsSource addListenerForEvent:@"message" usingBlock:^(MSServerSentEvent *event) {
+	NSLog(@"received message event");
+}];
+```
 
 ## Installation
 
@@ -22,7 +44,7 @@ pod "MSServerSentEvents"
 
 ## Author
 
-Simon Heys, si@simonheys.com
+Simon Heys, simon@makeandship.co.uk
 
 ## License
 

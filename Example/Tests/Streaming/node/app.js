@@ -1,44 +1,16 @@
 var http = require('http'),
-	fs = require('fs');
+    fs = require('fs');
 
-	/*
-	 // Website you wish to allow to connect
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8888');
-
-    // Request methods you wish to allow
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-
-    // Request headers you wish to allow
-    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
-
-    // Set to true if you need the website to include cookies in the requests sent
-    // to the API (e.g. in case you use sessions)
-    res.setHeader('Access-Control-Allow-Credentials', true);
-    */
-
-var jsonObject = require('./object.json');
-var jsonString = JSON.stringify(jsonObject);
-
-var server = http.createServer(function (request, response) {
+var server = http.createServer(function(request, response) {
 	var parts = request.url.split('/');
-	console.log('request.url:'+request.url);
-	console.log(parts[1]);
-	if (request.url === '/') {
-  		fs.readFile('./index.html', function (err, html) {
-  			response.writeHead(200, {
-  				"Content-Type": "text/html"
-  			});
-	        response.write(html);  
-	        response.end();  
+
+	if (parts[1] === 'stream-events') {
+	    response.writeHead(200, {
+	        'Access-Control-Allow-Origin': 'http://localhost',
+	        "Content-Type": "text/event-stream",
+	        "Connection": "keep-alive"
 	    });
-  	}
-  	else if ( parts[1] === 'stream-events' ) {
-  		response.writeHead(200, {
-  			'Access-Control-Allow-Origin':'http://localhost',
-			"Content-Type": "text/event-stream",
-			"Connection": "keep-alive" 
-		});
-		response.write('\
+	    response.write('\
 : a comment (ignored)\n\
 this line will be ignored since there is no field and the line itself is not a field\n\
 field: an unknown field that will be ignored\n\
@@ -69,9 +41,9 @@ data: no id\n\
 \n\
 event: open\n\
 data: a message event with the name "open"\n\n');
-					response.write('da');
-					response.write('ta: a message event with the name "message"\n\n');
-					response.write('data: a line ending with crlf\r\n\
+		response.write('da');
+		response.write('ta: a message event with the name "message"\n\n');
+		response.write('data: a line ending with crlf\r\n\
 data: a line with a : (colon)\n\
 data: a line ending with cr\r\
 \n\
@@ -110,7 +82,6 @@ retry\n\
 	    });
 			
 		interval = setInterval(function () {
-			response.write(jsonString);
 			console.log("sent…");
 		}, 3000);
 	}

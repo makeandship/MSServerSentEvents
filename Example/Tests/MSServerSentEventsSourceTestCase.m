@@ -9,6 +9,9 @@
 #import "MSServerSentEventsSourceTestCase.h"
 #import "MSServerSentEventsSource.h"
 #import "Expecta.h"
+#import "GCDWebServer.h"
+#import "GCDWebServerDataResponse.h"
+#import "EXTScope.h"
 
 @implementation MSServerSentEventsSourceTestCase
 
@@ -30,7 +33,24 @@
     __block BOOL didReceiveOpenEventWithListener = NO;
     __block BOOL didReceiveWildcardEventWithListener = NO;
     
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://127.0.0.1:8080/stream-events/"]];
+    GCDWebServer *webServer = [[GCDWebServer alloc] init];
+
+    [webServer
+        addDefaultHandlerForMethod:@"GET"
+        requestClass:[GCDWebServerRequest class]
+        processBlock:^GCDWebServerResponse *(GCDWebServerRequest* request) {
+            NSURL *url = [[NSBundle bundleForClass:[self class]] URLForResource:@"stream" withExtension:@"asis"];
+            NSString *stream = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil];
+            NSLog(@"stream:%@",stream);
+            GCDWebServerResponse *response = [GCDWebServerDataResponse responseWithText:stream];
+            response.contentType = @"text/event-stream";
+            return response;
+        }
+    ];
+
+    [webServer startWithPort:8888 bonjourName:nil];
+
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:webServer.serverURL];
 
     MSServerSentEventsSource *serverSentEventsSource = [[MSServerSentEventsSource alloc] initWithRequest:request receive:^(MSServerSentEvent *event) {
         NSLog(@"received:%@",event);
@@ -57,7 +77,7 @@
         NSLog(@"received * event");
         didReceiveWildcardEventWithListener = YES;
     }];
-
+    
     expect(messages).will.haveCountOf(9);
     if ( 9 == messages.count ) {
         expect([((MSServerSentEvent *)messages[0]).data isEqualToString:@"\n\n"]).will.beTruthy();
@@ -75,7 +95,6 @@
     }
     expect(didReceiveOpenEventWithListener).will.beTruthy();
     expect(didReceiveMessageEventWithListener).will.beTruthy();
-
 }
 
 @end

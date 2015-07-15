@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CA88332471EFDDF075EB9ED8"
+               BlueprintIdentifier = "37D10C7EA9D6C84A63F16DD5"
                BuildableName = "MSServerSentEvents.bundle"
                BlueprintName = "Pods-MSServerSentEvents_Example-MSServerSentEvents-MSServerSentEvents"
                ReferencedContainer = "container:Pods.xcodeproj">

@@ -21,6 +21,7 @@
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		E9E0B722D1D9527D3EF5532D /* Pods_MSServerSentEvents_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CABC2AB30C3DE6118C78CE0 /* Pods_MSServerSentEvents_Tests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		F419D9C31B56BC02002147A1 /* stream.asis in Resources */ = {isa = PBXBuildFile; fileRef = F419D9C21B56BC02002147A1 /* stream.asis */; };
 		F4587D9D1B566265009C711C /* MSServerSentEventsSourceTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = F4587D9C1B566265009C711C /* MSServerSentEventsSourceTestCase.m */; };
 		FC23668C18D4ACEBC6C8A2F2 /* Pods_MSServerSentEvents_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1051B93269057660D868B568 /* Pods_MSServerSentEvents_Example.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
@@ -63,6 +64,7 @@
 		DB4F386B6ED8081B0F67B199 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		EF7AC5D5EA959D565519727F /* Pods-MSServerSentEvents_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MSServerSentEvents_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MSServerSentEvents_Tests/Pods-MSServerSentEvents_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		F086F91688148E847A8127D4 /* Pods-MSServerSentEvents_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MSServerSentEvents_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MSServerSentEvents_Example/Pods-MSServerSentEvents_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		F419D9C21B56BC02002147A1 /* stream.asis */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stream.asis; sourceTree = "<group>"; };
 		F4587D9B1B566265009C711C /* MSServerSentEventsSourceTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSServerSentEventsSourceTestCase.h; sourceTree = "<group>"; };
 		F4587D9C1B566265009C711C /* MSServerSentEventsSourceTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSServerSentEventsSourceTestCase.m; sourceTree = "<group>"; };
 		F7E787DC3C39B1B1C1DB930F /* Pods-MSServerSentEvents_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MSServerSentEvents_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-MSServerSentEvents_Example/Pods-MSServerSentEvents_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 		6003F5B5195388D20070C39A /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				F419D9C11B56BC02002147A1 /* Fixtures */,
 				F4587D9B1B566265009C711C /* MSServerSentEventsSourceTestCase.h */,
 				F4587D9C1B566265009C711C /* MSServerSentEventsSourceTestCase.m */,
 				6003F5B6195388D20070C39A /* Supporting Files */,
@@ -193,6 +196,14 @@
 				EF7AC5D5EA959D565519727F /* Pods-MSServerSentEvents_Tests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		F419D9C11B56BC02002147A1 /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				F419D9C21B56BC02002147A1 /* stream.asis */,
+			);
+			path = Fixtures;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */,
+				F419D9C31B56BC02002147A1 /* stream.asis in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,4 +10,5 @@ target 'MSServerSentEvents_Tests', :exclusive => true do
 
   pod 'Specta'
   pod 'Expecta'
+  pod 'GCDWebServer', '~> 3.2'
 end

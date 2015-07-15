@@ -31,8 +31,9 @@ data: a message event with the name "open"
 
 data: a message event with the name "message"
 
+data: a line ending with crlf
 data: a line with a : (colon)
-
+data: a line ending with cr
 retry: 10000
 : reconnection time set to 10 seconds
 

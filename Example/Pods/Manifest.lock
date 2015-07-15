@@ -1,5 +1,8 @@
 PODS:
   - Expecta (1.0.0)
+  - GCDWebServer (3.2.5):
+    - GCDWebServer/Core (= 3.2.5)
+  - GCDWebServer/Core (3.2.5)
   - libextobjc/EXTScope (0.4.1):
     - libextobjc/RuntimeExtensions
   - libextobjc/RuntimeExtensions (0.4.1)
@@ -9,6 +12,7 @@ PODS:
 
 DEPENDENCIES:
   - Expecta
+  - GCDWebServer (~> 3.2)
   - MSServerSentEvents (from `../`)
   - Specta
 
@@ -18,8 +22,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Expecta: 32604574add2c46a36f8d2f716b6c5736eb75024
+  GCDWebServer: d0e1b23785e3dfd6c87601323d0f7cae059aab18
   libextobjc: a650fc1bf489a3d3a9bc2e621efa3e1006fc5471
-  MSServerSentEvents: 381dd181c32289b6e14688613fecafeee1a078d1
+  MSServerSentEvents: 7f424c3e2f85e730b0aaffd9251bccc3e46bc357
   Specta: 9cec98310dca411f7c7ffd6943552b501622abfe
 
 COCOAPODS: 0.37.2
