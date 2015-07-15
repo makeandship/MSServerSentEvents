@@ -1,0 +1,6 @@
+framework module libextobjc {
+  umbrella header "Pods-MSServerSentEvents_Example-libextobjc-umbrella.h"
+
+  export *
+  module * { export * }
+}

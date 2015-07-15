@@ -1,0 +1,25 @@
+PODS:
+  - Expecta (1.0.0)
+  - libextobjc/EXTScope (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/RuntimeExtensions (0.4.1)
+  - MSServerSentEvents (0.1.0):
+    - libextobjc/EXTScope (~> 0.4)
+  - Specta (1.0.2)
+
+DEPENDENCIES:
+  - Expecta
+  - MSServerSentEvents (from `../`)
+  - Specta
+
+EXTERNAL SOURCES:
+  MSServerSentEvents:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Expecta: 32604574add2c46a36f8d2f716b6c5736eb75024
+  libextobjc: a650fc1bf489a3d3a9bc2e621efa3e1006fc5471
+  MSServerSentEvents: 381dd181c32289b6e14688613fecafeee1a078d1
+  Specta: 9cec98310dca411f7c7ffd6943552b501622abfe
+
+COCOAPODS: 0.37.2

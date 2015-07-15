@@ -1,0 +1,13 @@
+{
+  "name": "ms-server-sent-events-streaming-test",
+  "version": "0.0.0",
+  "private": true,
+  "description": "",
+  "keywords": [],
+  "dependencies": {
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=0.8.0"
+  }
+}

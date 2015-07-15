@@ -10,21 +10,18 @@
 Pod::Spec.new do |s|
   s.name             = "MSServerSentEvents"
   s.version          = "0.1.0"
-  s.summary          = "A short description of MSServerSentEvents."
+  s.summary          = "A native Objective-C implementation of Server-Sent Events"
   s.description      = <<-DESC
-                       An optional longer description of MSServerSentEvents
-
-                       * Markdown format.
-                       * Don't worry about the indent, we strip it!
+                       Improve your iOS app’s user experience and utility with our open-source, standards-based real-time data library
                        DESC
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/MSServerSentEvents"
+  s.homepage         = "https://github.com/makeandship/MSServerSentEvents"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
-  s.author           = { "Simon Heys" => "si@simonheys.com" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/MSServerSentEvents.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.author           = { "Simon Heys" => "simon@makeandship.co.uk" }
+  s.source           = { :git => "https://github.com/makeandship/MSServerSentEvents.git", :tag => s.version.to_s }
+  s.social_media_url = 'https://twitter.com/makeandship'
 
-  s.platform     = :ios, '7.0'
+  s.platform     = :ios, '8.0'
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes/**/*'
@@ -34,5 +31,5 @@ Pod::Spec.new do |s|
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'libextobjc/EXTScope', '~> 0.4'
 end

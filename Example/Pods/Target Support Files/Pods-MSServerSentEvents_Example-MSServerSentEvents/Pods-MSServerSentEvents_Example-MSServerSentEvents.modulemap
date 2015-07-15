@@ -1,0 +1,6 @@
+framework module MSServerSentEvents {
+  umbrella header "Pods-MSServerSentEvents_Example-MSServerSentEvents-umbrella.h"
+
+  export *
+  module * { export * }
+}
